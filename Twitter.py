@@ -46,8 +46,12 @@ def get_sentiment_analysis(status):
         for sentence in blob.sentences:
             print(sentence.sentiment.polarity)
 
+def main():
+    var = raw_input("Input your twitter user name here: ")
+    get_sentiment_analysis(var)
 
-get_sentiment_analysis("rsherman25")
 
+
+main();
 
 
