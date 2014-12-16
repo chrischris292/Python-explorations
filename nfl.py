@@ -74,6 +74,7 @@ def getNewsArticles(name):
     page = urllib2.urlopen(url)
     soup = BeautifulSoup(page.read())
     for article in soup.findAll("item"):
+        print feedparser.parse(article)
         print article.find("title").text
         testimonial = TextBlob(article.find("title").text)
         print testimonial.sentiment
@@ -114,5 +115,4 @@ def getFirstLastName(name):
     return nameTuple
 
 
-data = getPassingData()
-print data["Russell Wilson"]
+getNewsArticles("Russell")
